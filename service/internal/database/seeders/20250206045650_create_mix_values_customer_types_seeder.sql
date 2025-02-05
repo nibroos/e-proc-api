@@ -11,41 +11,33 @@ INSERT INTO
   )
 VALUES
   (
-    4,
-    'KTP',
-    'ID - Kartu Tanda Penduduk',
+    7,
+    'Buyer',
+    'Buyer',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
   ),
   (
-    4,
-    'NPWP',
-    'ID - Nomor Pokok Wajib Pajak',
+    7,
+    'Agent',
+    'Agent',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
   ),
   (
-    4,
-    'SIM',
-    'ID - Surat Izin Mengeemudi',
+    7,
+    'Vendor',
+    'Vendor',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
   ),
   (
-    4,
-    'Passport',
-    'ID - Passport',
-    1,
-    CURRENT_TIMESTAMP,
-    CURRENT_TIMESTAMP
-  ),
-  (
-    4,
-    'Lainnya',
-    'ID - Lainnya',
+    7,
+    'Supplier',
+    'Supplier',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP

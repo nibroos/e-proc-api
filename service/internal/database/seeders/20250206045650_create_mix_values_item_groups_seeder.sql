@@ -11,33 +11,25 @@ INSERT INTO
   )
 VALUES
   (
-    5,
-    'Rumah',
-    'Alamat - Rumah',
+    9,
+    'Office',
+    'Office',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
   ),
   (
-    5,
-    'Kantor',
-    'Alamat - Kantor',
+    9,
+    'Production',
+    'Production',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
   ),
   (
-    5,
-    'Saudara',
-    'Alamat - Saudara',
-    1,
-    CURRENT_TIMESTAMP,
-    CURRENT_TIMESTAMP
-  ),
-  (
-    5,
-    'Lainnya',
-    'Alamat - Lainnya',
+    9,
+    'Others',
+    'Others',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP

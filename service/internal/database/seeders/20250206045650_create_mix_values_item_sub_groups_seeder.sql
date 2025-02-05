@@ -11,33 +11,25 @@ INSERT INTO
   )
 VALUES
   (
-    5,
-    'Rumah',
-    'Alamat - Rumah',
+    11,
+    'Finished goods',
+    'Finished goods',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
   ),
   (
-    5,
-    'Kantor',
-    'Alamat - Kantor',
+    11,
+    'Semi-finished goods',
+    'Semi-finished goods',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
   ),
   (
-    5,
-    'Saudara',
-    'Alamat - Saudara',
-    1,
-    CURRENT_TIMESTAMP,
-    CURRENT_TIMESTAMP
-  ),
-  (
-    5,
-    'Lainnya',
-    'Alamat - Lainnya',
+    11,
+    'Raw materials',
+    'Raw materials',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
