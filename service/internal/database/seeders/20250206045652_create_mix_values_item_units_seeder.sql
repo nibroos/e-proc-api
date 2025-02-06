@@ -1,0 +1,164 @@
+BEGIN;
+
+INSERT INTO
+  mix_values (
+    group_id,
+    name,
+    description,
+    status,
+    created_at,
+    updated_at
+  )
+VALUES
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Kg',
+    'Kilogram',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Ltr',
+    'Liter',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Pcs',
+    'Pieces',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Mtr',
+    'Meter',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Box',
+    'Box',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Set',
+    'Set',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Roll',
+    'Roll',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Bag',
+    'Bag',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Dozen',
+    'Dozen',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'item_units'
+    ),
+    'Pack',
+    'Pack',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  );
+
+COMMIT;

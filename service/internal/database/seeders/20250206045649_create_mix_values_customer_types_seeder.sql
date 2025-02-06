@@ -17,10 +17,10 @@ VALUES
       FROM
         groups
       WHERE
-        name = 'item_groups'
+        name = 'customer_types'
     ),
-    'Office',
-    'Office',
+    'Vendor',
+    'Vendor',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
@@ -32,10 +32,10 @@ VALUES
       FROM
         groups
       WHERE
-        name = 'item_groups'
+        name = 'customer_types'
     ),
-    'Production',
-    'Production',
+    'Buyer',
+    'Buyer',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP
@@ -47,10 +47,25 @@ VALUES
       FROM
         groups
       WHERE
-        name = 'item_groups'
+        name = 'customer_types'
     ),
-    'Others',
-    'Others',
+    'Agent',
+    'Agent',
+    1,
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+  ),
+  (
+    (
+      SELECT
+        id
+      FROM
+        groups
+      WHERE
+        name = 'customer_types'
+    ),
+    'Supplier',
+    'Supplier',
     1,
     CURRENT_TIMESTAMP,
     CURRENT_TIMESTAMP

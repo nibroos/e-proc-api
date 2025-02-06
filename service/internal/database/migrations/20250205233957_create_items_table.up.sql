@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS items (
   tpb_code TEXT NOT NULL,
   specification TEXT,
   description TEXT,
+  remark TEXT,
   price_sell INT NOT NULL,
   price_buy INT NOT NULL,
   minimum_stock INT NOT NULL,
@@ -18,3 +19,5 @@ CREATE TABLE IF NOT EXISTS items (
   updated_at timestamp with time zone,
   deleted_at timestamp with time zone
 );
+
+COMMIT;

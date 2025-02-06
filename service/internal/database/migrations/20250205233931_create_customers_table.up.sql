@@ -14,3 +14,5 @@ CREATE TABLE IF NOT EXISTS customers (
   updated_at timestamp with time zone,
   deleted_at timestamp with time zone
 );
+
+COMMIT;

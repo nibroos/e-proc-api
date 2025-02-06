@@ -1,14 +1,11 @@
 BEGIN;
 
-CREATE TABLE IF NOT EXISTS mix_values (
+CREATE TABLE IF NOT EXISTS catalog_details (
   id SERIAL PRIMARY KEY,
-  group_id INT NOT NULL,
-  parent_id INT,
-  name TEXT NOT NULL,
-  num INT,
-  description TEXT,
-  status INT,
-  options_json JSONB,
+  catalog_id INT NOT NULL REFERENCES catalogs(id),
+  item_id INT NOT NULL REFERENCES items(id),
+  price INT,
+  remark TEXT,
   created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
   updated_at timestamp with time zone,
   deleted_at timestamp with time zone
