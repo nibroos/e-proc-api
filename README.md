@@ -4,8 +4,23 @@
   <br>
 </h1>
 
-## Word from the Author
+Asumsi saya, aplikasi ini dibuat untuk vendor yang ingin membuat manajemen barang yang akan dijual, dan juga untuk pembeli yang ingin membeli barang yang dijual oleh vendor, kita sebagai admin mengelola konfirmasi/persetujuan vendor. Waktu terbatas, sampai saat ini beberapa yang sudah saya implementasikan: 
+- Dokumentasi postman sudah ada di root folder, file `e-proc.postman_collection.json` dengan response yang tersimpan sebagai bukti.
+- Registrasi Vendor & Pembeli menggunakan endpoint `/auth/register`
+- CRUD catalog hanya bagian parent, belum implementasi child(item) catalog, namun sudah ada seedernya. Cek endpoint `/catalogs`
+- Docker compose untuk development environment bisa digunakan, production belum dicoba. Docker image sudah ada di docker hub.
+- CRUD user dengan role permission. cek `/users`
+- Semua endpoint menggunakan JWT token, kecuali endpoint register dan login.
+- Hanya menggunakan method POST dengan pertimbangan cepat implementasi & debug yang lebih mudah.
+- CRUD seeder & migration, gunakan makefile dari luar service untuk menjalankan seeder & migration. cd ke `/service` lalu jalankan `make migrate-up`. untuk seeder, jalankan endpoint `seeders/run`, ini bukan best practice, hanya shortcut saja.
+- Semua select menggunakan raw query dengan pertimbangan performa, ORM untuk create/update.
+- Untuk deployment di production, sebenarnya sudah ada script Jenkinsfile yang saya buat dan biasa saya gunakan, namun belum saya coba di project ini. silahkan cek log deployment aplikasi saya (e-learning) yang lain ke link ini: [Jenkins](https://deploy.nibros.tech)
+- Semua isu yang saya temui sudah saya catat di bawah, jika ada yang ingin ditanyakan, silahkan. 
+- Technical question document bisa diakses di [Technical Question](https://docs.google.com/document/d/1cHUQHMkoz9jnRxcDHQaTMZ9YNCsM2vVwbxgJZwwM4es/edit?usp=sharing)
 
+Mohon maaf banyak bagian yang belum lengkap karena keperluan kantor saat ini yang padat, hanya efektif mengerjakan 1 hari. Saya harap reviewer mengerti garis besarnya dan bisa punya gambaran bagaimana saya bekerja dengan potensi yang saya miliki. 
+
+Terima kasih. 
 
 ## 🚀 Quick Start
 ### Developement Environment

@@ -1,0 +1,3203 @@
+{
+	"info": {
+		"_postman_id": "fafda906-43cf-46b0-a50e-effb105a8b52",
+		"name": "E-Proc Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20550982"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "/users/index-users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"global\": \"User T\",\n    \"name\": \"\",\n    \"email\": \"\",\n    \"username\": \"\",\n    \"per_page\": \"2\",\n    \"order_column\": \"\",\n    \"order_direction\": \"desc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/users/index-user",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"users",
+								"index-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/users/index-users filter",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 1,\n    \"global\": \"user114@example\",\n    \"name\": \"\",\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_direction\": \"desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/users/index-user",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"users",
+										"index-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Oct 2024 14:48:14 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 69,\n            \"username\": null,\n            \"name\": \"Nibros 24\",\n            \"email\": \"user114@example.com\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Users fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						},
+						{
+							"name": "/users/index-users",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 1,\n    \"global\": \"\",\n    \"name\": \"\",\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_direction\": \"desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/users/index-user",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"users",
+										"index-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Oct 2024 14:51:06 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "891",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 69,\n            \"username\": null,\n            \"name\": \"Nibros 24\",\n            \"email\": \"user114@example.com\"\n        },\n        {\n            \"id\": 68,\n            \"username\": null,\n            \"name\": \"Nibros 23\",\n            \"email\": \"user113@example.com\"\n        },\n        {\n            \"id\": 67,\n            \"username\": null,\n            \"name\": \"Nibros 22\",\n            \"email\": \"user112@example.com\"\n        },\n        {\n            \"id\": 66,\n            \"username\": null,\n            \"name\": \"Nibros 21\",\n            \"email\": \"user111@example.com\"\n        },\n        {\n            \"id\": 65,\n            \"username\": null,\n            \"name\": \"Nibros 20\",\n            \"email\": \"user110@example.com\"\n        },\n        {\n            \"id\": 64,\n            \"username\": null,\n            \"name\": \"Nibros 19\",\n            \"email\": \"user109@example.com\"\n        },\n        {\n            \"id\": 63,\n            \"username\": null,\n            \"name\": \"Nibros 18\",\n            \"email\": \"user108@example.com\"\n        },\n        {\n            \"id\": 62,\n            \"username\": null,\n            \"name\": \"Nibros 17\",\n            \"email\": \"user107@example.com\"\n        },\n        {\n            \"id\": 61,\n            \"username\": null,\n            \"name\": \"Nibros 16\",\n            \"email\": \"user106@example.com\"\n        },\n        {\n            \"id\": 60,\n            \"username\": null,\n            \"name\": \"Nibros 12\",\n            \"email\": \"user105@example.com\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 23,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 3\n    },\n    \"message\": \"Users fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/users/show-users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 23\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/users/show-user",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"users",
+								"show-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/users/show-users",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 23\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/users/show-user",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"users",
+										"show-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 14:23:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "407"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 23,\n            \"name\": \"Nibros 25\",\n            \"username\": \"user1201111356\",\n            \"email\": \"user1201111356@example.com\",\n            \"address\": null,\n            \"password\": \"$2a$10$.KknXcA9/QCkEPyrXycplu5cbOF3b5SOnPkl9gBtfHq/XajoAewQK\",\n            \"customer_name\": \"Nibros 25\",\n            \"roles\": [\n                \"manager\"\n            ],\n            \"permissions\": null,\n            \"created_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"User fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/users/create-users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nibros Test\",\n    \"username\": \"\",\n    \"email\": \"test124@gmail.com\",\n    // \"email\": \"user10@example.com\",\n    \"password\": \"bambang1!\",\n    \"role_ids\": [1]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/users/create-user",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"users",
+								"create-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/users/create-users",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Nibros Test\",\n    \"username\": \"\",\n    \"email\": \"test1234@gmail.com\",\n    // \"email\": \"user10@example.com\",\n    \"password\": \"bambang1!\",\n    \"role_ids\": [1]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/users/create-user",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"users",
+										"create-user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 27 Oct 2024 05:16:00 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "399",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 70,\n        \"name\": \"Nibros Test\",\n        \"username\": null,\n        \"email\": \"test1234@gmail.com\",\n        \"address\": null,\n        \"password\": \"$2a$10$K17Z2mX96eeHrC4qVM6NZOahtE1WgqAgU1B3rNS6F34rVv1ddZ.oW\",\n        \"roles\": [\n            \"superadmin\"\n        ],\n        \"permissions\": [\n            \"create_users\",\n            \"read_users\",\n            \"update_users\",\n            \"delete_users\"\n        ]\n    },\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"User created successfully\",\n    \"status\": 201,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/users/update-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 72,\n    \"name\": \"Nibros 26\",\n    \"username\": \"user117\", \n    // \"email\": \"testa@gmail.com\",\n    \"email\": \"user117@example.com\",\n    \"role_ids\": [2]\n    // \"password\": \"bambang1!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/users/update-user",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"users",
+								"update-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/users/update-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 71,\n    \"name\": \"Nibros 26\",\n    \"username\": \"user116\", \n    // \"email\": \"testa@gmail.com\",\n    \"email\": \"user116@example.com\",\n    \"role_ids\": [2]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/users/update-user",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"users",
+										"update-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2024 12:21:58 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "363",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 71,\n        \"name\": \"Nibros 26\",\n        \"username\": \"user116\",\n        \"email\": \"user116@example.com\",\n        \"address\": null,\n        \"password\": \"$2a$10$GdpxUd5Qzxv09VbxGhDtz.G0HtoPIJWAliyHlue4XOS4hGRu0IcG6\",\n        \"roles\": [\n            \"student\"\n        ],\n        \"permissions\": null,\n        \"created_at\": null\n    },\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"User updated successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/users/delete-users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 70\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/users/delete-user",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"users",
+								"delete-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/users/delete-users",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 70\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/users/delete-user",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"users",
+										"delete-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 27 Oct 2024 05:17:26 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"User deleted successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/users/restore-users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 70\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/users/restore-user",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"users",
+								"restore-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/users/delete-users",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 70\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/users/delete-user",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"users",
+										"delete-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 27 Oct 2024 05:17:26 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"User deleted successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						},
+						{
+							"name": "/users/restore-users",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 70\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/users/restore-user",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"users",
+										"restore-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 21:13:52 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"User restored successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{JWT_TOKEN}}",
+						"type": "string"
+					}
+				]
+			}
+		},
+		{
+			"name": "catalogs",
+			"item": [
+				{
+					"name": "/catalogs/index-catalog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"per_page\": \"10\",\n    \"global\": \"\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/catalogs/index-catalog",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"catalogs",
+								"index-catalog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/catalogs/index-catalog",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 1,\n    \"per_page\": \"10\",\n    \"global\": \"\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/index-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"index-catalog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:31:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4737"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"catalog_no\": \"CAT-001\",\n            \"description\": \"Catalog 1\",\n            \"remark\": \"Remark 1\",\n            \"is_active\": 0,\n            \"customer_id\": 1,\n            \"customer_name\": \"PT. Vendor A\",\n            \"item_name\": \"Kertas HVS A4\",\n            \"created_by_name\": null,\n            \"updated_by_name\": null,\n            \"created_at\": \"2025-02-06T12:59:40.77963Z\",\n            \"updated_at\": null,\n            \"deleted_at\": null,\n            \"catalog_details\": [\n                {\n                    \"id\": 1,\n                    \"catalog_id\": 1,\n                    \"item_id\": 1,\n                    \"price_buy\": 1000,\n                    \"price_sell\": 2000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 1\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A4\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 2,\n                    \"catalog_id\": 1,\n                    \"item_id\": 2,\n                    \"price_buy\": 2000,\n                    \"price_sell\": 3000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 2\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A3\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 3,\n                    \"catalog_id\": 1,\n                    \"item_id\": 3,\n                    \"price_buy\": 3000,\n                    \"price_sell\": 4000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 3\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A2\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 4,\n                    \"catalog_id\": 1,\n                    \"item_id\": 4,\n                    \"price_buy\": 4000,\n                    \"price_sell\": 5000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 4\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A1\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"catalog_no\": \"CAT-002\",\n            \"description\": \"Catalog 2\",\n            \"remark\": \"Remark 2\",\n            \"is_active\": 0,\n            \"customer_id\": 1,\n            \"customer_name\": \"PT. Vendor A\",\n            \"item_name\": \"Kertas HVS A3\",\n            \"created_by_name\": null,\n            \"updated_by_name\": null,\n            \"created_at\": \"2025-02-06T12:59:40.77963Z\",\n            \"updated_at\": null,\n            \"deleted_at\": null,\n            \"catalog_details\": [\n                {\n                    \"id\": 5,\n                    \"catalog_id\": 2,\n                    \"item_id\": 2,\n                    \"price_buy\": 5000,\n                    \"price_sell\": 6000,\n                    \"remark\": \"Remark 2\",\n                    \"detail_remark\": \"Remark 5\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A3\",\n                    \"catalog_no\": \"CAT-002\",\n                    \"description\": \"Catalog 2\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 6,\n                    \"catalog_id\": 2,\n                    \"item_id\": 4,\n                    \"price_buy\": 6000,\n                    \"price_sell\": 7000,\n                    \"remark\": \"Remark 2\",\n                    \"detail_remark\": \"Remark 6\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A1\",\n                    \"catalog_no\": \"CAT-002\",\n                    \"description\": \"Catalog 2\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 7,\n                    \"catalog_id\": 2,\n                    \"item_id\": 1,\n                    \"price_buy\": 7000,\n                    \"price_sell\": 8000,\n                    \"remark\": \"Remark 2\",\n                    \"detail_remark\": \"Remark 7\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A4\",\n                    \"catalog_no\": \"CAT-002\",\n                    \"description\": \"Catalog 2\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"catalog_no\": \"CAT-003\",\n            \"description\": \"Catalog 3\",\n            \"remark\": \"Remark 3\",\n            \"is_active\": 0,\n            \"customer_id\": 2,\n            \"customer_name\": \"PT. Buyer B\",\n            \"item_name\": \"Kertas HVS A1\",\n            \"created_by_name\": null,\n            \"updated_by_name\": null,\n            \"created_at\": \"2025-02-06T12:59:40.77963Z\",\n            \"updated_at\": null,\n            \"deleted_at\": null,\n            \"catalog_details\": [\n                {\n                    \"id\": 8,\n                    \"catalog_id\": 3,\n                    \"item_id\": 4,\n                    \"price_buy\": 8000,\n                    \"price_sell\": 9000,\n                    \"remark\": \"Remark 3\",\n                    \"detail_remark\": \"Remark 8\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A1\",\n                    \"catalog_no\": \"CAT-003\",\n                    \"description\": \"Catalog 3\",\n                    \"customer_id\": 2,\n                    \"customer_name\": \"PT. Buyer B\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 9,\n                    \"catalog_id\": 3,\n                    \"item_id\": 1,\n                    \"price_buy\": 9000,\n                    \"price_sell\": 10000,\n                    \"remark\": \"Remark 3\",\n                    \"detail_remark\": \"Remark 9\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A4\",\n                    \"catalog_no\": \"CAT-003\",\n                    \"description\": \"Catalog 3\",\n                    \"customer_id\": 2,\n                    \"customer_name\": \"PT. Buyer B\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"catalog_no\": \"CAT-004\",\n            \"description\": \"Catalog 4\",\n            \"remark\": \"Remark 4\",\n            \"is_active\": 0,\n            \"customer_id\": 2,\n            \"customer_name\": \"PT. Buyer B\",\n            \"item_name\": \"Kertas HVS A3\",\n            \"created_by_name\": null,\n            \"updated_by_name\": null,\n            \"created_at\": \"2025-02-06T12:59:40.77963Z\",\n            \"updated_at\": null,\n            \"deleted_at\": null,\n            \"catalog_details\": [\n                {\n                    \"id\": 10,\n                    \"catalog_id\": 4,\n                    \"item_id\": 2,\n                    \"price_buy\": 10000,\n                    \"price_sell\": 11000,\n                    \"remark\": \"Remark 4\",\n                    \"detail_remark\": \"Remark 10\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A3\",\n                    \"catalog_no\": \"CAT-004\",\n                    \"description\": \"Catalog 4\",\n                    \"customer_id\": 2,\n                    \"customer_name\": \"PT. Buyer B\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"total\": 4,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Catalogs fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						},
+						{
+							"name": "/catalogs/index-catalog global",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 1,\n    \"per_page\": \"10\",\n    \"global\": \"Catalog 1\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/index-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"index-catalog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:31:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1794"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"catalog_no\": \"CAT-001\",\n            \"description\": \"Catalog 1\",\n            \"remark\": \"Remark 1\",\n            \"is_active\": 0,\n            \"customer_id\": 1,\n            \"customer_name\": \"PT. Vendor A\",\n            \"item_name\": \"Kertas HVS A4\",\n            \"created_by_name\": null,\n            \"updated_by_name\": null,\n            \"created_at\": \"2025-02-06T12:59:40.77963Z\",\n            \"updated_at\": null,\n            \"deleted_at\": null,\n            \"catalog_details\": [\n                {\n                    \"id\": 1,\n                    \"catalog_id\": 1,\n                    \"item_id\": 1,\n                    \"price_buy\": 1000,\n                    \"price_sell\": 2000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 1\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A4\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 2,\n                    \"catalog_id\": 1,\n                    \"item_id\": 2,\n                    \"price_buy\": 2000,\n                    \"price_sell\": 3000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 2\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A3\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 3,\n                    \"catalog_id\": 1,\n                    \"item_id\": 3,\n                    \"price_buy\": 3000,\n                    \"price_sell\": 4000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 3\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A2\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 4,\n                    \"catalog_id\": 1,\n                    \"item_id\": 4,\n                    \"price_buy\": 4000,\n                    \"price_sell\": 5000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 4\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A1\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Catalogs fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/catalogs/show-catalog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/catalogs/show-catalog",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"catalogs",
+								"show-catalog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/catalogs/show-catalog",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/show-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"show-catalog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:29:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1676"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"catalog_no\": \"CAT-001\",\n            \"description\": \"Catalog 1\",\n            \"remark\": \"Remark 1\",\n            \"is_active\": 0,\n            \"customer_id\": 1,\n            \"customer_name\": \"PT. Vendor A\",\n            \"created_by_id\": 0,\n            \"created_at\": null,\n            \"catalog_detail\": [\n                {\n                    \"id\": 1,\n                    \"catalog_id\": 1,\n                    \"item_id\": 1,\n                    \"price_buy\": 1000,\n                    \"price_sell\": 2000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 1\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A4\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 2,\n                    \"catalog_id\": 1,\n                    \"item_id\": 2,\n                    \"price_buy\": 2000,\n                    \"price_sell\": 3000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 2\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A3\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 3,\n                    \"catalog_id\": 1,\n                    \"item_id\": 3,\n                    \"price_buy\": 3000,\n                    \"price_sell\": 4000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 3\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A2\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                },\n                {\n                    \"id\": 4,\n                    \"catalog_id\": 1,\n                    \"item_id\": 4,\n                    \"price_buy\": 4000,\n                    \"price_sell\": 5000,\n                    \"remark\": \"Remark 1\",\n                    \"detail_remark\": \"Remark 4\",\n                    \"is_active\": 0,\n                    \"item_name\": \"Kertas HVS A1\",\n                    \"catalog_no\": \"CAT-001\",\n                    \"description\": \"Catalog 1\",\n                    \"customer_id\": 1,\n                    \"customer_name\": \"PT. Vendor A\",\n                    \"created_at\": \"2025-02-06T12:59:40.785041Z\",\n                    \"updated_at\": null,\n                    \"deleted_at\": null\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Catalog fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						},
+						{
+							"name": "/catalogs/show-catalog 404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 9\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/show-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"show-catalog"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:30:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Catalog not found\",\n    \"status\": 404,\n    \"errors\": \"sql: no rows in result set\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/catalogs/create-catalog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 2,\n    \"catalog_no\": \"CAT-007\",\n    \"description\": \"CATALOG 7\",\n    \"is_active\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/catalogs/create-catalog",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"catalogs",
+								"create-catalog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/catalogs/create-catalog parent only",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customer_id\": 2,\n    \"catalog_no\": \"CAT-007\",\n    \"description\": \"CATALOG 7\",\n    \"is_active\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/create-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"create-catalog"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:35:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "331"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"catalog_no\": \"CAT-007\",\n            \"description\": \"CATALOG 7\",\n            \"remark\": \"\",\n            \"is_active\": 0,\n            \"customer_id\": 2,\n            \"customer_name\": \"PT. Buyer B\",\n            \"created_by_id\": 0,\n            \"created_at\": null,\n            \"catalog_details\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Catalog created successfully\",\n    \"status\": 201,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/catalogs/update-catalog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 5,\n    \"customer_id\": 2,\n    \"catalog_no\": \"CAT-008\",\n    \"description\": \"CATALOG 8\",\n    \"is_active\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/catalogs/update-catalog",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"catalogs",
+								"update-catalog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/catalogs/update-catalog 404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 7,\n    \"customer_id\": 2,\n    \"catalog_no\": \"CAT-008\",\n    \"description\": \"CATALOG 8\",\n    \"is_active\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/update-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"update-catalog"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:40:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Catalog not found\",\n    \"status\": 404,\n    \"errors\": \"sql: no rows in result set\"\n}"
+						},
+						{
+							"name": "/catalogs/update-catalog parent only",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 5,\n    \"customer_id\": 2,\n    \"catalog_no\": \"CAT-008\",\n    \"description\": \"CATALOG 8\",\n    \"is_active\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/update-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"update-catalog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:43:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "331"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"catalog_no\": \"CAT-008\",\n            \"description\": \"CATALOG 8\",\n            \"remark\": \"\",\n            \"is_active\": 1,\n            \"customer_id\": 2,\n            \"customer_name\": \"PT. Buyer B\",\n            \"created_by_id\": 0,\n            \"created_at\": null,\n            \"catalog_details\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Catalog updated successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/catalogs/delete-catalog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 32\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/catalogs/delete-catalog",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"catalogs",
+								"delete-catalog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/catalogs/delete-catalog 404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 32\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/delete-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"delete-catalog"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:44:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Catalog not found\",\n    \"status\": 404,\n    \"errors\": \"sql: no rows in result set\"\n}"
+						},
+						{
+							"name": "/catalogs/delete-catalog",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/delete-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"delete-catalog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:44:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Catalog deleted successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/catalogs/restore-catalog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 32\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/catalogs/restore-catalog",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"catalogs",
+								"restore-catalog"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/catalogs/restore-catalog",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/catalogs/restore-catalog",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"catalogs",
+										"restore-catalog"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 13:45:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Catalog restored successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{JWT_TOKEN}}",
+						"type": "string"
+					}
+				]
+			}
+		},
+		{
+			"name": "identifiers",
+			"item": [
+				{
+					"name": "/identifiers/index-identifier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    // \"user_id\": 1,\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/identifiers/index-identifier",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"identifiers",
+								"index-identifier"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/identifiers/index-identifier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 1,\n    // \"user_id\": 1,\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/identifiers/index-identifier",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"identifiers",
+										"index-identifier"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 01:35:59 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "760",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"user_id\": 1,\n            \"user_name\": \"Nibros\",\n            \"type_identifier_id\": 9,\n            \"type_identifier_name\": \"NPWP\",\n            \"ref_num\": \"331010\",\n            \"status\": 1,\n            \"created_at\": null,\n            \"updated_at\": \"2024-11-08T22:26:34.088885Z\"\n        },\n        {\n            \"id\": 15,\n            \"user_id\": 1,\n            \"user_name\": \"Nibros\",\n            \"type_identifier_id\": 10,\n            \"type_identifier_name\": \"SIM\",\n            \"ref_num\": \"331019\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-08T22:30:47.702475Z\",\n            \"updated_at\": \"2024-11-08T22:30:47.703153Z\"\n        },\n        {\n            \"id\": 16,\n            \"user_id\": 72,\n            \"user_name\": \"Nibros 26\",\n            \"type_identifier_id\": 10,\n            \"type_identifier_name\": \"SIM\",\n            \"ref_num\": \"331020\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-08T22:30:47.702475Z\",\n            \"updated_at\": \"2024-11-08T22:30:47.703153Z\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 3,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Identifiers fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/identifiers/auth-index-identifier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"user_id\": 1,\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/identifiers/auth-index-identifier",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"identifiers",
+								"auth-index-identifier"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/identifiers/auth-index-identifier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 1,\n    \"user_id\": 1,\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/identifiers/auth-index-identifier",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"identifiers",
+										"auth-index-identifier"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 01:34:35 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "362",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 16,\n            \"user_id\": 72,\n            \"user_name\": \"Nibros 26\",\n            \"type_identifier_id\": 10,\n            \"type_identifier_name\": \"SIM\",\n            \"ref_num\": \"331020\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-08T22:30:47.702475Z\",\n            \"updated_at\": \"2024-11-08T22:30:47.703153Z\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Identifiers fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/identifiers/show-identifier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/identifiers/show-identifier",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"identifiers",
+								"show-identifier"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/identifiers/show-identifier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 7\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/identifiers/show-identifier",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"identifiers",
+										"show-identifier"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2024 12:54:14 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "372",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"user_id\": 1,\n            \"user_name\": \"Nibros\",\n            \"type_identifier_id\": 8,\n            \"type_identifier_name\": \"KTP\",\n            \"ref_num\": \"33101\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-08T12:53:27.248862Z\",\n            \"updated_at\": \"2024-11-08T12:53:27.249075Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Identifier fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/identifiers/create-identifier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type_identifier_id\": 8,\n    \"ref_num\": \"33101\",\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/identifiers/create-identifier",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"identifiers",
+								"create-identifier"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/identifiers/create-identifier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type_identifier_id\": 8,\n    \"ref_num\": \"33101\",\n    \"status\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/identifiers/create-identifier",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"identifiers",
+										"create-identifier"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2024 12:53:26 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "372",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"user_id\": 1,\n            \"user_name\": \"Nibros\",\n            \"type_identifier_id\": 8,\n            \"type_identifier_name\": \"KTP\",\n            \"ref_num\": \"33101\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-08T12:53:27.248862Z\",\n            \"updated_at\": \"2024-11-08T12:53:27.249075Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Identifier created successfully\",\n    \"status\": 201,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/identifiers/update-identifier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 7,\n    \"type_identifier_id\": 9,\n    \"ref_num\": \"331010\",\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/identifiers/update-identifier",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"identifiers",
+								"update-identifier"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/identifiers/update-identifier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 7,\n    \"type_identifier_id\": 9,\n    \"ref_num\": \"331010\",\n    \"status\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/identifiers/update-identifier",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"identifiers",
+										"update-identifier"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2024 22:26:33 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "349",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 7,\n            \"user_id\": 1,\n            \"user_name\": \"Nibros\",\n            \"type_identifier_id\": 9,\n            \"type_identifier_name\": \"NPWP\",\n            \"ref_num\": \"331010\",\n            \"status\": 1,\n            \"created_at\": null,\n            \"updated_at\": \"2024-11-08T22:26:34.088885Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Identifier updated successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/identifiers/delete-identifier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 15\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/identifiers/delete-identifier",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"identifiers",
+								"delete-identifier"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/identifiers/delete-identifier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 15\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/identifiers/delete-identifier",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"identifiers",
+										"delete-identifier"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2024 22:31:38 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "147",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Identifier deleted successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/identifiers/restore-identifier",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 15\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/identifiers/restore-identifier",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"identifiers",
+								"restore-identifier"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/educations/delete-education",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 32\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/educations/delete-education",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"educations",
+										"delete-education"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 30 Oct 2024 22:52:58 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Education deleted successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						},
+						{
+							"name": "/identifiers/restore-identifier",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 15\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/identifiers/restore-identifier",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"identifiers",
+										"restore-identifier"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 08 Nov 2024 22:32:37 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "148",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Identifier restored successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{JWT_TOKEN}}",
+						"type": "string"
+					}
+				]
+			}
+		},
+		{
+			"name": "contacts",
+			"item": [
+				{
+					"name": "/contacts/index-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    // \"user_id\": 1,\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/index-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"index-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/index-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 1,\n    // \"user_id\": 1,\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/index-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"index-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 07:13:12 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "566",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 72,\n            \"user_name\": \"Nibros 26\",\n            \"type_contact_id\": 17,\n            \"type_contact_name\": \"Rumah\",\n            \"ref_num\": \"541821\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-10T07:11:13.952412Z\",\n            \"updated_at\": \"2024-11-10T07:11:13.952903Z\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 72,\n            \"user_name\": \"Nibros 26\",\n            \"type_contact_id\": 18,\n            \"type_contact_name\": \"Kantor\",\n            \"ref_num\": \"111999\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-10T07:13:07.448579Z\",\n            \"updated_at\": \"2024-11-10T07:13:07.448828Z\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 2,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Contacts fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/contacts/auth-index-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"user_id\": 1,\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/auth-index-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"auth-index-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/auth-index-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page\": 1,\n    \"user_id\": 1,\n    \"per_page\": \"10\",\n    \"order_column\": \"\",\n    \"order_directionter\": \"desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/auth-index-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"auth-index-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 07:15:00 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "566",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 72,\n            \"user_name\": \"Nibros 26\",\n            \"type_contact_id\": 17,\n            \"type_contact_name\": \"Rumah\",\n            \"ref_num\": \"541821\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-10T07:11:13.952412Z\",\n            \"updated_at\": \"2024-11-10T07:11:13.952903Z\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 72,\n            \"user_name\": \"Nibros 26\",\n            \"type_contact_id\": 18,\n            \"type_contact_name\": \"Kantor\",\n            \"ref_num\": \"111999\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-10T07:13:07.448579Z\",\n            \"updated_at\": \"2024-11-10T07:13:07.448828Z\"\n        }\n    ],\n    \"meta\": {\n        \"total\": 2,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Contacts fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/contacts/show-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/show-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"show-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/show-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/show-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"show-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 07:16:03 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "370",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"user_id\": 71,\n            \"user_name\": \"Nibros 26\",\n            \"type_contact_id\": 19,\n            \"type_contact_name\": \"Saudara\",\n            \"ref_num\": \"332\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-10T07:13:07.448579Z\",\n            \"updated_at\": \"2024-11-10T07:13:07.448828Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Contact fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/contacts/auth-show-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/auth-show-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"auth-show-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/auth-show-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/auth-show-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"auth-show-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 08:10:34 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "369",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"user_id\": 72,\n            \"user_name\": \"Nibros 26\",\n            \"type_contact_id\": 19,\n            \"type_contact_name\": \"Saudara\",\n            \"ref_num\": \"999444\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-10T07:20:52.06Z\",\n            \"updated_at\": \"2024-11-10T07:21:25.908552Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Contact fetched successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/contacts/create-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type_contact_id\": 18,\n    \"user_id\": 71,\n    \"ref_num\": \"431244\",\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/create-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"create-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/create-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type_contact_id\": 17,\n    \"ref_num\": \"541821\",\n    \"status\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/create-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"create-contact"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 07:11:13 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "371",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 72,\n            \"user_name\": \"Nibros 26\",\n            \"type_contact_id\": 17,\n            \"type_contact_name\": \"Rumah\",\n            \"ref_num\": \"541821\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-10T07:11:13.952412Z\",\n            \"updated_at\": \"2024-11-10T07:11:13.952903Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Contact created successfully\",\n    \"status\": 201,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/contacts/update-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"type_contact_id\": 19,\n    \"ref_num\": \"999444\",\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/update-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"update-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/update-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 2,\n    \"type_contact_id\": 19,\n    \"ref_num\": \"999444\",\n    \"status\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/update-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"update-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 07:21:25 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "369",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"user_id\": 72,\n            \"user_name\": \"Nibros 26\",\n            \"type_contact_id\": 19,\n            \"type_contact_name\": \"Saudara\",\n            \"ref_num\": \"999444\",\n            \"status\": 1,\n            \"created_at\": \"2024-11-10T07:20:52.06Z\",\n            \"updated_at\": \"2024-11-10T07:21:25.908552Z\",\n            \"deleted_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"Contact updated successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/contacts/delete-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/delete-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"delete-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/delete-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/delete-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"delete-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 07:23:36 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Contact deleted successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/contacts/auth-delete-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/auth-delete-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"auth-delete-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/auth-delete-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/auth-delete-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"auth-delete-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 08:08:27 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Contact deleted successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/contacts/restore-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/restore-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"restore-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/restore-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/restore-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"restore-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 07:55:53 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Contact restored successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "/contacts/auth-restore-contact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"id\": 99\n    \"id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/contacts/auth-restore-contact",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"contacts",
+								"auth-restore-contact"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/contacts/auth-restore-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    // \"id\": 99\n    \"id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/contacts/auth-restore-contact",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"contacts",
+										"auth-restore-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Nov 2024 08:08:35 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"Contact restored successfully\",\n    \"status\": 200,\n    \"errors\": null\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{JWT_TOKEN}}",
+						"type": "string"
+					}
+				]
+			}
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "/auth/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nibros@example.com\",\n    \"password\": \"admel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/auth/login",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/auth/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"nibros@example.com\",\n    \"password\": \"admel\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/auth/login",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 14:24:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1128"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Nibros\",\n            \"username\": \"nibros\",\n            \"email\": \"nibros@example.com\",\n            \"address\": \"123 Main St\",\n            \"password\": \"$2a$06$IqbfRbAV.dSfPlUCRpwJQuWRvTBbfKVKiCuQjLnExtug/or4qjKjq\",\n            \"customer_name\": null,\n            \"roles\": [\n                \"superadmin\"\n            ],\n            \"permissions\": [\n                \"create_users\",\n                \"read_users\",\n                \"update_users\",\n                \"delete_users\",\n                \"create_master_customers\",\n                \"read_master_customers\",\n                \"update_master_customers\",\n                \"delete_master_customers\",\n                \"create_catalogs\",\n                \"read_catalogs\",\n                \"update_catalogs\",\n                \"delete_catalogs\"\n            ],\n            \"created_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 0,\n        \"per_page\": 0,\n        \"current_page\": 0,\n        \"last_page\": 0\n    },\n    \"message\": \"User authenticated successfully\",\n    \"status\": 200,\n    \"errors\": null,\n    \"optional\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzkxMTEwNTIsInBlcm1pc3Npb25zIjpbImNyZWF0ZV91c2VycyIsInJlYWRfdXNlcnMiLCJ1cGRhdGVfdXNlcnMiLCJkZWxldGVfdXNlcnMiLCJjcmVhdGVfbWFzdGVyX2N1c3RvbWVycyIsInJlYWRfbWFzdGVyX2N1c3RvbWVycyIsInVwZGF0ZV9tYXN0ZXJfY3VzdG9tZXJzIiwiZGVsZXRlX21hc3Rlcl9jdXN0b21lcnMiLCJjcmVhdGVfY2F0YWxvZ3MiLCJyZWFkX2NhdGFsb2dzIiwidXBkYXRlX2NhdGFsb2dzIiwiZGVsZXRlX2NhdGFsb2dzIl0sInJvbGVzIjpbInN1cGVyYWRtaW4iXSwidXNlcl9pZCI6MX0.8Z5r-mlFUsIxLofn2o4I7mdyMFiRg4scGQnZVDGYiS8\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/auth/register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nibros 25\",\n    \"username\": \"user1201111356\", \n    // \"email\": \"testa@gmail.com\",\n    \"email\": \"user1201111356@example.com\",\n    \"password\": \"test1!\",\n    \"customer_type_id\": 29\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/auth/register",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/auth/register self-regis vendor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Nibros 25\",\n    \"username\": \"user1201111356\", \n    // \"email\": \"testa@gmail.com\",\n    \"email\": \"user1201111356@example.com\",\n    \"password\": \"test1!\",\n    \"customer_type_id\": 29\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/auth/register",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 14:22:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "609"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 23,\n            \"name\": \"Nibros 25\",\n            \"username\": \"user1201111356\",\n            \"email\": \"user1201111356@example.com\",\n            \"address\": null,\n            \"password\": \"$2a$10$.KknXcA9/QCkEPyrXycplu5cbOF3b5SOnPkl9gBtfHq/XajoAewQK\",\n            \"customer_name\": \"Nibros 25\",\n            \"roles\": [\n                \"manager\"\n            ],\n            \"permissions\": null,\n            \"created_at\": null\n        }\n    ],\n    \"meta\": {\n        \"total\": 1,\n        \"per_page\": 10,\n        \"current_page\": 1,\n        \"last_page\": 1\n    },\n    \"message\": \"User registered successfully\",\n    \"status\": 201,\n    \"errors\": null,\n    \"optional\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzkxMTA5MjcsInBlcm1pc3Npb25zIjpudWxsLCJyb2xlcyI6WyJtYW5hZ2VyIl0sInVzZXJfaWQiOjIzfQ.jONe4fWNu4dbr9jSE9KkeGOOqbmwdJNqChXPChC6hlY\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/seeders/run",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{USER_SV_REST}}/seeders/run",
+							"host": [
+								"{{USER_SV_REST}}"
+							],
+							"path": [
+								"seeders",
+								"run"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/seeders/run",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{USER_SV_REST}}/seeders/run",
+									"host": [
+										"{{USER_SV_REST}}"
+									],
+									"path": [
+										"seeders",
+										"run"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2025 12:59:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Seeders executed successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Nibros 25\",\n    \"username\": \"user117\", \n    // \"email\": \"testa@gmail.com\",\n    \"email\": \"user117@example.com\",\n    \"password\": \"bambang1!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{USER_SV_REST}}/users/test",
+					"host": [
+						"{{USER_SV_REST}}"
+					],
+					"path": [
+						"users",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "scheduler/schedule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWT_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client-Timezone",
+						"value": "Asia/Jakarta",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"start_at\": \"2024-12-15 16:01\",\n  \"end_at\": \"2024-12-15 16:05\",\n  \"cron\": \"* * * * *\",\n  \"name\": \"generate_random_string\",\n  \"action\": \"stop\",\n  \"description\": \"g1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{USER_SV_REST}}/scheduler/schedule",
+					"host": [
+						"{{USER_SV_REST}}"
+					],
+					"path": [
+						"scheduler",
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "scheduler/list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWT_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client-Timezone",
+						"value": "Asia/Jakarta",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"start_at\": \"2024-12-15 16:01\",\n  \"end_at\": \"2024-12-15 16:05\",\n  \"cron\": \"* * * * *\",\n  \"name\": \"generate_random_number\",\n  \"action\": \"stop\",\n  \"description\": \"g1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{USER_SV_REST}}/scheduler/list",
+					"host": [
+						"{{USER_SV_REST}}"
+					],
+					"path": [
+						"scheduler",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "APP_URL",
+			"value": "http://localhost",
+			"type": "string"
+		},
+		{
+			"key": "USER_SV_REST",
+			"value": "http://localhost:4001/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "JWT_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzI1NjkxMzUsInVzZXJfaWQiOjcyfQ.hLrPtcA3w9wJT_apvUZ9uoXvmT09_8mIrzOCyBMebxM",
+			"type": "string"
+		}
+	]
+}
