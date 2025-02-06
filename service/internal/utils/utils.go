@@ -463,3 +463,11 @@ func ContainsIgnoreCase(str, substr string) bool {
 	substr = strings.ToLower(substr)
 	return strings.Contains(str, substr)
 }
+
+func JoinUintArray(arr []uint) string {
+	var strArr []string
+	for _, v := range arr {
+		strArr = append(strArr, fmt.Sprint(v))
+	}
+	return strings.Join(strArr, ",")
+}

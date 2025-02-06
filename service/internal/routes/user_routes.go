@@ -12,7 +12,8 @@ import (
 func SetupUserRoutes(users fiber.Router, gormDB *gorm.DB, sqlDB *sqlx.DB) {
 	userRepo := repository.NewUserRepository(gormDB, sqlDB)
 	userService := service.NewUserService(userRepo)
-	userController := rest.NewUserController(userService)
+	customerService := service.NewCustomerService(repository.NewCustomerRepository(gormDB, sqlDB))
+	userController := rest.NewUserController(userService, customerService)
 
 	// prefix /users
 

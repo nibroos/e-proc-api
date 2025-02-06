@@ -31,8 +31,8 @@ func SetupRoutes(app *fiber.App, gormDB *gorm.DB, sqlDB *sqlx.DB) {
 	})
 
 	// Setup auth routes
-	auth.Post("/login", rest.NewUserController(service.NewUserService(repository.NewUserRepository(gormDB, sqlDB))).Login)
-	auth.Post("/register", rest.NewUserController(service.NewUserService(repository.NewUserRepository(gormDB, sqlDB))).Register)
+	auth.Post("/login", rest.NewUserController(service.NewUserService(repository.NewUserRepository(gormDB, sqlDB)), service.NewCustomerService(repository.NewCustomerRepository(gormDB, sqlDB))).Login)
+	auth.Post("/register", rest.NewUserController(service.NewUserService(repository.NewUserRepository(gormDB, sqlDB)), service.NewCustomerService(repository.NewCustomerRepository(gormDB, sqlDB))).Register)
 
 	// Protected routes
 	app.Use(middleware.JWTMiddleware())
@@ -50,6 +50,9 @@ func SetupRoutes(app *fiber.App, gormDB *gorm.DB, sqlDB *sqlx.DB) {
 
 	addresses := version.Group("/addresses")
 	SetupAddressRoutes(addresses, gormDB, sqlDB)
+
+	catalogs := version.Group("/catalogs")
+	SetupCatalogtRoutes(catalogs, gormDB, sqlDB)
 
 	// Scheduler route
 	// cron := cron.New()

@@ -22,10 +22,11 @@ func NewRegisterStoreRequest() *RegisterStoreRequest {
 func (r *RegisterStoreRequest) Validate(req *dtos.RegisterRequest, ctx context.Context) map[string]string {
 	// utils.DD(req)
 	rules := govalidator.MapData{
-		"name":     []string{"required", "min:3"},
-		"username": []string{"unique:users,username"},
-		"email":    []string{"required", "email", "unique:users,email"},
-		"password": []string{"required", "min:4"},
+		"name":             []string{"required", "min:3"},
+		"username":         []string{"unique:users,username"},
+		"email":            []string{"required", "email", "unique:users,email"},
+		"password":         []string{"required", "min:4"},
+		"customer_type_id": []string{"required", "exists:mix_values,id"},
 	}
 
 	opts := govalidator.Options{

@@ -164,14 +164,19 @@ func (r *userRepository) GetUsers(ctx context.Context, filters map[string]string
 func (r *userRepository) GetUserByID(ctx context.Context, params *dtos.GetUserByIDParams) (*dtos.UserDetailDTO, error) {
 	var user dtos.UserDetailDTO
 
-	query := `SELECT id, username, name, email, address, password FROM users WHERE id = $1`
+	query := `SELECT 
+		u.id, u.username, u.name, u.email, u.address, u.password,
+		c.name as customer_name
+		FROM users u
+		LEFT JOIN customers c ON u.id = c.user_id 
+		WHERE u.id = $1`
 
 	var args []interface{}
 	args = append(args, params.ID)
 
-	isDeletedQuery := ` AND deleted_at IS NULL`
+	isDeletedQuery := ` AND u.deleted_at IS NULL`
 	if params.IsDeleted != nil && *params.IsDeleted == 1 {
-		isDeletedQuery = " AND deleted_at IS NOT NULL"
+		isDeletedQuery = " AND u.deleted_at IS NOT NULL"
 	}
 
 	query += isDeletedQuery

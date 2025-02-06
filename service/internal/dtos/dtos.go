@@ -55,15 +55,16 @@ type UserListDTO struct {
 }
 
 type UserDetailDTO struct {
-	ID          uint     `json:"id"`
-	Name        string   `json:"name"`
-	Username    *string  `json:"username"`
-	Email       string   `json:"email"`
-	Address     *string  `json:"address"`
-	Password    *string  `json:"password"`
-	Roles       []string `json:"roles"`
-	Permissions []string `json:"permissions"`
-	CreatedAt   *string  `json:"created_at"`
+	ID           uint     `json:"id"`
+	Name         string   `json:"name"`
+	Username     *string  `json:"username"`
+	Email        string   `json:"email"`
+	Address      *string  `json:"address"`
+	Password     *string  `json:"password"`
+	CustomerName *string  `json:"customer_name" db:"customer_name"`
+	Roles        []string `json:"roles"`
+	Permissions  []string `json:"permissions"`
+	CreatedAt    *string  `json:"created_at"`
 }
 type GetUsersResult struct {
 	Users []UserListDTO
@@ -76,11 +77,12 @@ type LoginRequest struct {
 	Password string `json:"password"`
 }
 type RegisterRequest struct {
-	Name     string  `json:"name"`
-	Username *string `json:"username"`
-	Email    string  `json:"email"`
-	Address  *string `json:"address"`
-	Password string  `json:"password"`
+	Name           string  `json:"name"`
+	Username       *string `json:"username"`
+	Email          string  `json:"email"`
+	Address        *string `json:"address"`
+	Password       string  `json:"password"`
+	CustomerTypeID uint    `json:"customer_type_id"`
 }
 
 type CreateIdentifierRequest struct {
@@ -304,4 +306,166 @@ type SchedulerListDTO struct {
 	Status      string  `json:"status" db:"status"`
 	StartAt     *string `json:"start_at" db:"start_at"`
 	EndAt       *string `json:"end_at" db:"end_at"`
+}
+
+type CreateCatalogRequest struct {
+	CustomerID  uint   `json:"customer_id"`
+	CatalogNo   string `json:"catalog_no"`
+	Description string `json:"description"`
+	Remark      string `json:"remark"`
+	IsActive    int8   `json:"is_active"`
+}
+
+type UpdateCatalogRequest struct {
+	ID          uint   `json:"id"`
+	CustomerID  uint   `json:"customer_id"`
+	CatalogNo   string `json:"catalog_no"`
+	Description string `json:"description"`
+	Remark      string `json:"remark"`
+	IsActive    int8   `json:"is_active"`
+}
+
+type GetCatalogByIDRequest struct {
+	ID uint `json:"id"`
+}
+
+type GetCatalogParams struct {
+	ID        uint
+	IsDeleted *int
+}
+
+func NewGetCatalogParams(id uint) *GetCatalogParams {
+	defaultIsDeleted := 0
+	return &GetCatalogParams{
+		ID:        id,
+		IsDeleted: &defaultIsDeleted,
+	}
+}
+
+type DeleteCatalogRequest struct {
+	ID uint `json:"id"`
+}
+
+type CatalogListDTO struct {
+	ID            uint                  `json:"id" db:"id"`
+	CatalogNo     string                `json:"catalog_no" db:"catalog_no"`
+	Description   string                `json:"description" db:"description"`
+	Remark        string                `json:"remark" db:"remark"`
+	IsActive      int8                  `json:"is_active"`
+	CustomerID    uint                  `json:"customer_id" db:"customer_id"`
+	CustomerName  string                `json:"customer_name" db:"customer_name"`
+	ItemName      string                `json:"item_name" db:"item_name"`
+	CreatedByName *string               `json:"created_by_name" db:"created_by_name"`
+	UpdatedByName *string               `json:"updated_by_name" db:"updated_by_name"`
+	CreatedAt     *string               `json:"created_at" db:"created_at"`
+	UpdatedAt     *string               `json:"updated_at" db:"updated_at"`
+	DeleteAt      *string               `json:"deleted_at" db:"deleted_at"`
+	CatalogDetail []CatalogChildListDTO `json:"catalog_details"`
+}
+
+type CatalogChildListDTO struct {
+	ID           uint    `json:"id" db:"id"`
+	CatalogID    uint    `json:"catalog_id" db:"catalog_id"`
+	ItemID       uint    `json:"item_id" db:"item_id"`
+	PriceBuy     int     `json:"price_buy" db:"price_buy"`
+	PriceSell    int     `json:"price_sell" db:"price_sell"`
+	Remark       string  `json:"remark" db:"remark"`
+	DetailRemark string  `json:"detail_remark" db:"detail_remark"`
+	IsActive     int8    `json:"is_active" db:"is_active"`
+	ItemName     string  `json:"item_name" db:"item_name"`
+	CatalogNo    string  `json:"catalog_no" db:"catalog_no"`
+	Description  string  `json:"description" db:"description"`
+	CustomerID   uint    `json:"customer_id" db:"customer_id"`
+	CustomerName string  `json:"customer_name" db:"customer_name"`
+	CreatedAt    *string `json:"created_at" db:"created_at"`
+	UpdatedAt    *string `json:"updated_at" db:"updated_at"`
+	DeletedAt    *string `json:"deleted_at" db:"deleted_at"`
+}
+
+type CatalogDetailDTO struct {
+	ID            uint                  `json:"id" db:"id"`
+	CatalogNo     string                `json:"catalog_no" db:"catalog_no"`
+	Description   string                `json:"description" db:"description"`
+	Remark        string                `json:"remark" db:"remark"`
+	IsActive      int8                  `json:"is_active" db:"is_active"`
+	CustomerID    uint                  `json:"customer_id" db:"customer_id"`
+	CustomerName  string                `json:"customer_name" db:"customer_name"`
+	CreatedByID   uint                  `json:"created_by_id" db:"created_by_id"`
+	CreatedAt     *time.Time            `json:"created_at" db:"created_at"`
+	CatalogDetail []CatalogChildListDTO `json:"catalog_details"`
+}
+type GetCatalogsResult struct {
+	Catalogs []CatalogListDTO
+	Total    int
+	Err      error
+}
+
+type CreateCustomerRequest struct {
+	CustomerID uint   `json:"customer_id"`
+	Name       uint   `json:"name"`
+	Email      string `json:"email"`
+	IsActive   int8   `json:"is_active"`
+}
+
+type UpdateCustomerRequest struct {
+	ID         uint   `json:"id"`
+	CustomerID uint   `json:"customer_id"`
+	Name       uint   `json:"name"`
+	Email      string `json:"email"`
+	IsActive   int8   `json:"is_active"`
+}
+
+type GetCustomerByIDRequest struct {
+	ID uint `json:"id"`
+}
+
+type GetCustomerParams struct {
+	ID        uint
+	IsDeleted *int
+}
+
+func NewGetCustomerParams(id uint) *GetCustomerParams {
+	defaultIsDeleted := 0
+	return &GetCustomerParams{
+		ID:        id,
+		IsDeleted: &defaultIsDeleted,
+	}
+}
+
+type DeleteCustomerRequest struct {
+	ID uint `json:"id"`
+}
+
+type CustomerListDTO struct {
+	ID            uint    `json:"id" db:"id"`
+	Name          uint    `json:"name" db:"name"`
+	Email         string  `json:"email" db:"email"`
+	IsActive      int8    `json:"is_active"`
+	CustomerID    uint    `json:"customer_id" db:"customer_id"`
+	CustomerName  string  `json:"customer_name" db:"customer_name"`
+	CreatedByName *string `json:"created_by_name" db:"created_by_name"`
+	UpdatedByName *string `json:"updated_by_name" db:"updated_by_name"`
+	CreatedAt     *string `json:"created_at" db:"created_at"`
+	UpdatedAt     *string `json:"updated_at" db:"updated_at"`
+	DeleteAt      *string `json:"deleted_at" db:"deleted_at"`
+}
+
+type CustomerDetailDTO struct {
+	ID            uint       `json:"id" db:"id"`
+	Name          uint       `json:"name" db:"name"`
+	Email         string     `json:"email" db:"email"`
+	IsActive      int8       `json:"is_active"`
+	CustomerID    uint       `json:"customer_id" db:"customer_id"`
+	CreatedByID   uint       `json:"created_by_id" db:"created_by_id"`
+	UpdatedByID   *uint      `json:"updated_by_id" db:"updated_by_id"`
+	CreatedByName *string    `json:"created_by_name" db:"created_by_name"`
+	UpdatedByName *string    `json:"updated_by_name" db:"updated_by_name"`
+	CreatedAt     *time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt     *time.Time `json:"updated_at" db:"updated_at"`
+	DeletedAt     *time.Time `json:"deleted_at" db:"deleted_at"`
+}
+type GetCustomersResult struct {
+	Customers []CustomerListDTO
+	Total     int
+	Err       error
 }

@@ -3,7 +3,7 @@ BEGIN;
 CREATE TABLE IF NOT EXISTS identifiers (
   id SERIAL PRIMARY KEY,
   type_identifier_id INT REFERENCES mix_values(id),
-  user_id INT REFERENCES users(id),
+  user_id INT,
   ref_num INT,
   status INT,
   options_json JSONB,

@@ -13,11 +13,12 @@ import (
 )
 
 type UserController struct {
-	service *service.UserService
+	service         *service.UserService
+	customerService *service.CustomerService
 }
 
-func NewUserController(service *service.UserService) *UserController {
-	return &UserController{service: service}
+func NewUserController(userService *service.UserService, customerService *service.CustomerService) *UserController {
+	return &UserController{service: userService, customerService: customerService}
 }
 
 func (c *UserController) GetUsers(ctx *fiber.Ctx) error {
@@ -209,6 +210,18 @@ func (c *UserController) Register(ctx *fiber.Ctx) error {
 			return ctx.Status(http.StatusConflict).JSON(fiber.Map{"errors": err.Error(), "message": "Username already exists", "status": http.StatusConflict})
 		}
 		return utils.GetResponse(ctx, nil, nil, "Failed to create user", http.StatusInternalServerError, err.Error(), nil)
+	}
+
+	customer := models.Customer{
+		Name:           req.Name,
+		CustomerTypeID: req.CustomerTypeID,
+		Email:          req.Email,
+		UserID:         user.ID,
+	}
+
+	_, err = c.customerService.CreateCustomer(ctx.Context(), &customer)
+	if err != nil {
+		return utils.GetResponse(ctx, nil, nil, "Failed to create customer", http.StatusInternalServerError, err.Error(), nil)
 	}
 
 	params := &dtos.GetUserByIDParams{ID: createdUser.ID}

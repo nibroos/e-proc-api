@@ -4,6 +4,9 @@
   <br>
 </h1>
 
+## Word from the Author
+
+
 ## 🚀 Quick Start
 ### Developement Environment
 On `/` dir, Run `make copy-env`, Modify to suit your environment, focus on these key, you can leave others as it is. The key name is explanatory itself.
@@ -14,6 +17,8 @@ GATEWAY_PORT=4050
 # DATABASE
 POSTGRES_PORT=5432
 ```
+
+If the make command is not available, copy `.env.example` to `.env` on `/docker` & `/service` dir, then modify the key, then run `docker-compose -f docker/docker-compose-dev.yml up --build -d` on `/` dir.
 
 > Without docker, you need to install [air-verse](https://github.com/air-verse/air) to activate the hot reloading.
 

@@ -12,7 +12,10 @@ CREATE TABLE IF NOT EXISTS customers (
   user_id INT NOT NULL,
   created_at timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
   updated_at timestamp with time zone,
-  deleted_at timestamp with time zone
+  deleted_at timestamp with time zone,
+  created_by_id INT,
+  updated_by_id INT,
+  deleted_by_id INT
 );
 
 COMMIT;
